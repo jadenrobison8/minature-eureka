@@ -1,13 +1,18 @@
 const express = require('express');
-const { notes } = require('./db/db.json');
+const { notes } = require('./data/db.json');
 
 const app = express();
 
+const PORT = process.env.port || 3001;
 
-app.get('/api/db', (req, res) => {
-    res.send(notes);
-})
 
-app.listen(3001, () => {
-    console.log(`API server  now on port 3001`);
-})
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static('public'));
+
+require("./routes/apiRoutes")(app);
+require('./routes/htmlRoutes')(app);
+
+app.listen(PORT, () => {
+    console.log(`API server  now on port: ${PORT}`);
+});
