@@ -8,6 +8,7 @@ note taker utilizing node.js and express.js, deployed to heroku
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [URL](#url)
 * [Questions](#questions)
 * [Contributing](#contributing)
 * [Tests](#tests)
@@ -18,6 +19,9 @@ clone repository and download dependencies
 
 ## Usage
 deploy to heroku
+
+## URL
+https://tranquil-scrubland-44388.herokuapp.com/
 
 ## Questions
 Github: github.com/jadenrobison8  
