@@ -29,6 +29,21 @@ router.post("/notes", (req,res) => {
 });
 
 //delete a note
+router.delete("/notes/:id", (req,res) => {
+    const noteId = req.params.id;
+    
+    let filteredId = notes.filter(function(note) {
+        return note.id != noteId;
+    });
 
+    newNote = JSON.stringify(filteredId);
+    notes = filteredId;
+
+    fs.writeFileSync("./data/db.json", newNote, (err) => {
+        if (err) throw err;
+    });
+
+    res.end();
+})
 
 module.exports = router;
